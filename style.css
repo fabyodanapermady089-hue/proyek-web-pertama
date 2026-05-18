@@ -1,75 +1,121 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #0f172a; /* Warna latar gelap modern */
+    background-color: #0f172a;
     color: #f8fafc;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .card {
     background-color: #1e293b;
-    padding: 30px;
+    padding: 25px;
     border-radius: 16px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     text-align: center;
     max-width: 350px;
     width: 100%;
     border: 1px solid #334155;
+    box-sizing: border-box;
 }
 
 h1 {
-    color: #38bdf8; /* Warna biru langit */
+    color: #38bdf8;
     margin-top: 0;
+    font-size: 24px;
 }
 
 p {
     color: #94a3b8;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-#status-box {
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 14px;
+/* Kotak Preview Warna */
+#color-preview {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    margin: 15px 0 5px 0;
+    background-color: rgb(15, 23, 42);
+    border: 2px solid #475569;
+    transition: background-color 0.05s ease;
 }
 
-.status-neutral {
-    background-color: #334155;
+#rgb-text {
+    font-family: monospace;
+    font-size: 14px;
     color: #cbd5e1;
+    margin-bottom: 20px;
+    background-color: #0f172a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
-.status-active {
-    background-color: #16a34a;
-    color: #ffffff;
-    animation: pulse 1.5s infinite;
+/* Gaya Tampilan Slider */
+.mixer-control {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.mixer-control label {
+    display: block;
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Warna teks angka indikator slider */
+#label-red span { color: #ef4444; }
+#label-green span { color: #22c55e; }
+#label-blue span { color: #3b82f6; }
+
+.mixer-control input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+/* Warna titik geser (Thumb) masing-masing slider */
+.mixer-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#red::-webkit-slider-thumb { background: #ef4444; }
+#green::-webkit-slider-thumb { background: #22c55e; }
+#blue::-webkit-slider-thumb { background: #3b82f6; }
+
+.mixer-control input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
 }
 
 .btn {
-    background-color: #0284c7;
+    background-color: #475569;
     color: white;
     border: none;
-    padding: 12px 24px;
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 13px;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.2s;
 }
 
 .btn:hover {
-    background-color: #0369a1;
-    transform: translateY(-1px);
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
+    background-color: #64748b;
 }
