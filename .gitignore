@@ -1,0 +1,24 @@
+# Mengabaikan file sampah otomatis dari sistem operasi Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mengabaikan file sampah dari sistem operasi macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Mengabaikan folder konfigurasi teks editor lokal (VS Code / Cursor)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Mengabaikan folder log atau cache system yang tidak diperlukan di production
+*.log
+.npm/
+.eslintcache
