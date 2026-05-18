@@ -1,22 +1,46 @@
-// Mengambil elemen HTML berdasarkan ID
-const actionBtn = document.getElementById('action-btn');
-const statusBox = document.getElementById('status-box');
-const statusText = document.getElementById('status-text');
+// Mengambil elemen input slider
+const redSlider = document.getElementById('red');
+const greenSlider = document.getElementById('green');
+const blueSlider = document.getElementById('blue');
 
-// Menambahkan fungsi deteksi klik pada tombol
-actionBtn.addEventListener('click', () => {
-    // Mengecek apakah status saat ini sudah aktif atau belum
-    if (statusBox.classList.contains('status-neutral')) {
-        // Mengubah ke status aktif
-        statusBox.classList.remove('status-neutral');
-        statusBox.classList.add('status-active');
-        statusText.innerText = 'Sistem Aktif & Live!';
-        actionBtn.innerText = 'Matikan Fitur';
-    } else {
-        // Mengembalikan ke status semula
-        statusBox.classList.remove('status-active');
-        statusBox.classList.add('status-neutral');
-        statusText.innerText = 'Siap';
-        actionBtn.innerText = 'Aktifkan Fitur';
-    }
+// Mengambil elemen teks value angka
+const redVal = document.getElementById('val-red');
+const greenVal = document.getElementById('val-green');
+const blueVal = document.getElementById('val-blue');
+
+// Mengambil elemen preview dan tombol
+const colorPreview = document.getElementById('color-preview');
+const rgbText = document.getElementById('rgb-text');
+const resetBtn = document.getElementById('reset-btn');
+
+// Fungsi utama untuk mengupdate warna
+function updateWarna() {
+    const r = redSlider.value;
+    const g = greenSlider.value;
+    const b = blueSlider.value;
+
+    // Update teks angka di atas slider
+    redVal.innerText = r;
+    greenVal.innerText = g;
+    blueVal.innerText = b;
+
+    // Campurkan warna dan pasang ke background preview
+    const warnaCampuran = `rgb(${r}, ${g}, ${b})`;
+    colorPreview.style.backgroundColor = warnaCampuran;
+    
+    // Tampilkan kode RGB-nya
+    rgbText.innerText = warnaCampuran;
+}
+
+// Menghubungkan fungsi ke event input slider (dijalankan tiap kali digeser)
+redSlider.addEventListener('input', updateWarna);
+greenSlider.addEventListener('input', updateWarna);
+blueSlider.addEventListener('input', updateWarna);
+
+// Fungsi untuk tombol Reset balik ke warna gelap semula
+resetBtn.addEventListener('click', () => {
+    redSlider.value = 15;
+    greenSlider.value = 23;
+    blueSlider.value = 42;
+    updateWarna();
 });
