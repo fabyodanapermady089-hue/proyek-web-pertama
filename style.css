@@ -1,0 +1,75 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f172a; /* Warna latar gelap modern */
+    color: #f8fafc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid #334155;
+}
+
+h1 {
+    color: #38bdf8; /* Warna biru langit */
+    margin-top: 0;
+}
+
+p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#status-box {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-neutral {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+.status-active {
+    background-color: #16a34a;
+    color: #ffffff;
+    animation: pulse 1.5s infinite;
+}
+
+.btn {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0369a1;
+    transform: translateY(-1px);
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
